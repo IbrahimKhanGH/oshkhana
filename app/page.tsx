@@ -6,6 +6,7 @@ import Catering from "./components/Catering";
 import Trust from "./components/Trust";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
+import StickyMobileCTA from "./components/StickyMobileCTA";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <CTASection />
       </main>
       <Footer />
+      <StickyMobileCTA />
     </>
   );
 }

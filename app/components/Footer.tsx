@@ -5,6 +5,7 @@ export default function Footer() {
 
   return (
     <footer
+      className="pb-20 md:pb-8"
       style={{
         backgroundColor: "#1A2826",
         borderTop: "1px solid rgba(245,238,224,0.07)",

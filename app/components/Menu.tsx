@@ -17,9 +17,15 @@ const dishes = [
   },
   {
     name: "Lagman",
-    origin: "Uzbek",
+    origin: "Uyghur",
     description:
-      "Hand-pulled noodles in a slow-cooked lamb and vegetable broth, fragrant with cumin and tomato. A deeply warming dish for any table.",
+      "Hand-pulled noodles in a rich lamb and vegetable broth with cumin and tomato. A staple of Uyghur cuisine — hearty, aromatic, and deeply satisfying.",
+  },
+  {
+    name: "Soza",
+    origin: "Uyghur",
+    description:
+      "Uyghur-style cold noodles tossed in a tangy, savory sauce with fresh vegetables. Light, refreshing, and perfect alongside heavier dishes.",
   },
   {
     name: "Chicken Karahi",
@@ -167,9 +173,19 @@ export default function Menu() {
                       letterSpacing: "0.16em",
                       textTransform: "uppercase",
                       padding: "0.2rem 0.55rem",
-                      color: dish.origin === "Pakistani" ? "#BE5B34" : "#1C5955",
-                      border: `1px solid ${dish.origin === "Pakistani" ? "#BE5B3450" : "#1C595550"}`,
-                      backgroundColor: dish.origin === "Pakistani" ? "#BE5B3408" : "#1C595508",
+                      color:
+                        dish.origin === "Pakistani" ? "#BE5B34"
+                        : dish.origin === "Uyghur" ? "#7A5C2E"
+                        : "#1C5955",
+                      border: `1px solid ${
+                        dish.origin === "Pakistani" ? "#BE5B3450"
+                        : dish.origin === "Uyghur" ? "#7A5C2E50"
+                        : "#1C595550"
+                      }`,
+                      backgroundColor:
+                        dish.origin === "Pakistani" ? "#BE5B3408"
+                        : dish.origin === "Uyghur" ? "#7A5C2E08"
+                        : "#1C595508",
                       whiteSpace: "nowrap",
                     }}
                   >
@@ -181,48 +197,65 @@ export default function Menu() {
           ))}
         </div>
 
-        {/* Footer note */}
+        {/* Inline CTA after menu */}
         <FadeUp delay={0.15}>
           <div
             style={{
+              marginTop: "2.5rem",
+              padding: "1.5rem 1.75rem",
+              backgroundColor: "#EFE6D2",
+              borderLeft: "2px solid #1C5955",
               display: "flex",
               flexDirection: "column",
-              gap: "0.75rem",
-              marginTop: "2.25rem",
+              gap: "0.5rem",
             }}
-            className="sm:flex-row sm:items-center sm:justify-between"
+            className="sm:flex-row sm:items-center sm:justify-between sm:gap-6"
           >
-            <p
-              style={{
-                fontFamily: "var(--font-dm-sans)",
-                fontSize: "0.82rem",
-                fontWeight: 300,
-                color: "#6A7B78",
-                margin: 0,
-              }}
-            >
-              Menus are customized for each event. Dietary accommodations available on request.
-            </p>
+            <div>
+              <p
+                style={{
+                  fontFamily: "var(--font-dm-sans)",
+                  fontSize: "0.88rem",
+                  fontWeight: 500,
+                  color: "#1A2826",
+                  margin: "0 0 0.2rem",
+                }}
+              >
+                Like what you see?
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--font-dm-sans)",
+                  fontSize: "0.82rem",
+                  fontWeight: 300,
+                  color: "#6A7B78",
+                  margin: 0,
+                }}
+              >
+                Menus are customized for your event. Call or text to discuss.
+              </p>
+            </div>
             <a
-              href="#contact"
+              href="tel:+1XXXXXXXXXX"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "6px",
+                gap: "8px",
+                padding: "0.75rem 1.5rem",
                 fontFamily: "var(--font-dm-sans)",
                 fontSize: "0.82rem",
                 fontWeight: 500,
-                color: "#1C5955",
+                letterSpacing: "0.04em",
+                color: "#F5EEE0",
+                backgroundColor: "#1C5955",
                 whiteSpace: "nowrap",
-                transition: "color 0.2s",
+                flexShrink: 0,
+                transition: "background-color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#103733")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#1C5955")}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#103733")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1C5955")}
             >
-              Request a full menu
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              Call or Text to Order
             </a>
           </div>
         </FadeUp>

@@ -178,8 +178,8 @@ export default function Hero() {
           }}
         >
           Anna Khanum personally prepares every order &mdash; fresh plov,
-          tender manty, aromatic biryani, and more. Family recipes, no
-          shortcuts, made for your gathering.
+          hand-pulled lagman, aromatic biryani, and more. Family recipes,
+          no shortcuts, made for your gathering.
         </motion.p>
 
         {/* CTA */}

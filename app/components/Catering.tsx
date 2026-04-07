@@ -285,32 +285,64 @@ export default function Catering() {
                     fontWeight: 300,
                     lineHeight: 1.75,
                     color: "#3D5250",
-                    margin: "0 0 0.75rem",
+                    margin: "0 0 1rem",
                   }}
                 >
                   Not sure where to start? Reach out with the basics — we&rsquo;ll
                   help you figure out the rest. No pressure, no rigid packages.
                 </p>
-                <a
-                  href="#contact"
+                <div
                   style={{
-                    display: "inline-flex",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "0.5rem",
                     alignItems: "center",
-                    gap: "6px",
-                    fontFamily: "var(--font-dm-sans)",
-                    fontSize: "0.82rem",
-                    fontWeight: 500,
-                    color: "#1C5955",
-                    transition: "color 0.2s",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#103733")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "#1C5955")}
                 >
-                  Get in touch
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </a>
+                  <a
+                    href="tel:+1XXXXXXXXXX"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      padding: "0.7rem 1.25rem",
+                      fontFamily: "var(--font-dm-sans)",
+                      fontSize: "0.82rem",
+                      fontWeight: 500,
+                      letterSpacing: "0.04em",
+                      color: "#F5EEE0",
+                      backgroundColor: "#1C5955",
+                      transition: "background-color 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#103733")}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1C5955")}
+                  >
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="currentColor" aria-hidden="true">
+                      <path d="M11.5 8.8c0 .2-.04.4-.13.59a2.5 2.5 0 01-.38.57c-.24.26-.49.44-.77.55a2.4 2.4 0 01-.93.18c-.48 0-1-.11-1.55-.33a11.9 11.9 0 01-1.6-.87A11.9 11.9 0 014.1 7.4a12.1 12.1 0 01-.87-1.59c-.22-.54-.33-1.06-.33-1.55 0-.32.06-.63.17-.92.11-.3.28-.56.52-.8.27-.27.56-.4.87-.4.12 0 .23.02.34.07.11.05.21.13.29.25L6.6 4.6c.08.11.14.22.18.32.04.1.06.19.06.27 0 .1-.03.2-.09.3a1.6 1.6 0 01-.23.3l-.32.34a.22.22 0 00-.06.17c0 .03 0 .06.02.1l.04.09c.08.14.21.33.42.57.21.24.44.47.68.7.25.23.49.44.73.62.23.19.42.32.57.41l.08.04a.44.44 0 00.1.01.23.23 0 00.17-.07l.34-.34c.1-.11.2-.19.3-.24a.6.6 0 01.3-.08c.09 0 .18.02.27.06.1.04.2.1.31.19l2.1 1.33c.11.07.19.17.24.28.04.12.07.24.07.37z"/>
+                    </svg>
+                    Call or Text
+                  </a>
+                  <a
+                    href="mailto:hello@oshkhana.com"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      padding: "0.7rem 1.25rem",
+                      fontFamily: "var(--font-dm-sans)",
+                      fontSize: "0.82rem",
+                      fontWeight: 400,
+                      letterSpacing: "0.04em",
+                      color: "#1C5955",
+                      border: "1px solid #1C595540",
+                      transition: "border-color 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#1C5955")}
+                    onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#1C595540")}
+                  >
+                    Email us
+                  </a>
+                </div>
               </div>
             </FadeUp>
           </div>
