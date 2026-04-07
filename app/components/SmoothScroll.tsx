@@ -23,7 +23,21 @@ export default function SmoothScroll({
     }
     rafId = requestAnimationFrame(raf);
 
+    function handleAnchorClick(e: MouseEvent) {
+      const anchor = (e.target as HTMLElement).closest<HTMLAnchorElement>("a[href^='#']");
+      if (!anchor) return;
+      const hash = anchor.getAttribute("href");
+      if (!hash || hash === "#") return;
+      const target = document.querySelector(hash);
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target as HTMLElement, { offset: -100 });
+    }
+
+    document.addEventListener("click", handleAnchorClick);
+
     return () => {
+      document.removeEventListener("click", handleAnchorClick);
       cancelAnimationFrame(rafId);
       lenis.destroy();
     };

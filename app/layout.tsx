@@ -19,9 +19,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "OSHKHANA by Anna Khanum — Pakistani & Uzbek Catering in Dallas",
+  title: "OSHKHANA — Uzbek, Uyghur & Pakistani Catering in Dallas",
   description:
-    "Home-crafted Pakistani and Uzbek catering in Dallas. Family gatherings, office lunches, nikkahs, and community events — thoughtfully prepared by Anna Khanum.",
+    "Fresh plov, lagman, biryani, and more — catered for family gatherings, office lunches, nikkahs, and community events across DFW. Made to order by Anna Khanum.",
 };
 
 export default function RootLayout({

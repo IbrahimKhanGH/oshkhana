@@ -16,7 +16,7 @@ const pillars = [
   {
     num: "03",
     label: "Cultural authenticity",
-    body: "Pakistani and Uzbek cuisine as it's meant to taste — not diluted for a generic palate.",
+    body: "Uzbek, Uyghur, and Pakistani cuisine as it's meant to taste — not diluted for a generic palate.",
   },
   {
     num: "04",
@@ -134,14 +134,12 @@ export default function About() {
                 of what food means to a gathering.
               </p>
               <p style={{ marginTop: 0, marginBottom: "1.4rem" }}>
-                The name{" "}
-                <em style={{ color: "#F5EEE0", fontStyle: "normal" }}>oshkhana</em>{" "}
-                comes from{" "}
-                <em style={{ color: "#F5EEE0", fontStyle: "normal" }}>osh</em>
-                {" "}— food, and especially plov — and{" "}
-                <em style={{ color: "#F5EEE0", fontStyle: "normal" }}>khana</em>
-                {" "}— place, room. A place for food. A place where people
-                gather and eat. That&rsquo;s exactly what this is.
+                The name says it twice.{" "}
+                <em style={{ color: "#F5EEE0", fontStyle: "normal" }}>Osh</em>
+                {" "}means food in Uzbek.{" "}
+                <em style={{ color: "#F5EEE0", fontStyle: "normal" }}>Khana</em>
+                {" "}means food in Urdu. Two languages, same word, same
+                meaning &mdash; that&rsquo;s exactly what this kitchen is.
               </p>
               <p style={{ marginTop: 0, marginBottom: "1.4rem" }}>
                 Anna cooks every single order herself. Uzbek plov, Uyghur

@@ -154,11 +154,11 @@ export default function Hero() {
             margin: "0 auto 1.5rem",
           }}
         >
-          Real food, made by hand,
+          Food worth gathering
           <br />
-          <span style={{ color: "#1C5955" }}>for the people</span>{" "}
+          <span style={{ color: "#1C5955" }}>people</span>{" "}
           <span style={{ fontStyle: "italic", fontWeight: 400 }}>
-            you&rsquo;re gathering
+            around
           </span>
         </motion.h1>
 
@@ -177,9 +177,9 @@ export default function Hero() {
             margin: "0 auto 2.5rem",
           }}
         >
-          Anna Khanum personally prepares every order &mdash; fresh plov,
-          hand-pulled lagman, aromatic biryani, and more. Family recipes,
-          no shortcuts, made for your gathering.
+          Fresh plov, hand-pulled lagman, aromatic biryani, and more
+          &mdash; prepared from family recipes for your event. No
+          shortcuts, no packages. Just real food, made to order.
         </motion.p>
 
         {/* CTA */}
