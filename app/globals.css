@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* ─── Brand palette ─────────────────────────────────────────────────────────── */
+@theme inline {
+  /* Backgrounds */
+  --color-cream:       #F5EEE0;   /* base parchment */
+  --color-cream-warm:  #EFE6D2;   /* warm section bg */
+  --color-cream-deep:  #E8DCCA;   /* deepest cream for contrast */
+
+  /* Teal (from the ornamental frame) */
+  --color-teal:        #1C5955;   /* primary brand teal */
+  --color-teal-deep:   #103733;   /* darkest teal, hover states */
+  --color-teal-mid:    #2A726D;   /* lighter, used sparingly */
+
+  /* Terracotta / clay (from floral and bowl elements) */
+  --color-terra:       #BE5B34;   /* muted clay orange */
+  --color-terra-soft:  #C96A45;   /* slightly lighter for variety */
+
+  /* Text */
+  --color-ink:         #1A2826;   /* almost-black with teal undertone */
+  --color-ink-mid:     #3D5250;   /* mid-weight text */
+  --color-ink-muted:   #6A7B78;   /* muted/supporting text */
+
+  /* Borders */
+  --color-rule:        #D0C4AD;   /* main border/rule */
+  --color-rule-light:  #E2D9C8;   /* subtle separators */
+
+  /* Fonts */
+  --font-serif: var(--font-playfair);
+  --font-sans:  var(--font-dm-sans);
+}
+
+/* ─── Reset & base ──────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Lenis owns scroll — don't set scroll-behavior here */
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: #F5EEE0;
+  color: #1A2826;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+/* Selection color */
+::selection {
+  background-color: #1C5955;
+  color: #F5EEE0;
+}
+
+/* ─── Typography helpers ─────────────────────────────────────────────────────── */
+.serif {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.sans {
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+/* Eyebrow label treatment */
+.eyebrow {
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #BE5B34;
+}
+
+/* Section heading */
+.section-title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+/* ─── Link defaults ──────────────────────────────────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─── Lenis scroll fix ──────────────────────────────────────────────────────── */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
