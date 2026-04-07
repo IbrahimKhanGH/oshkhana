@@ -3,17 +3,45 @@
 import { motion } from "framer-motion";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
-const PHONE = "(XXX) XXX-XXXX";
 const PHONE_HREF = "tel:+1XXXXXXXXXX";
 
-const occasions = [
-  "Nikkahs",
-  "Family gatherings",
-  "Office lunches",
-  "Community events",
-  "Milad celebrations",
-  "Graduation parties",
-];
+function SubtlePattern() {
+  return (
+    <svg
+      aria-hidden="true"
+      style={{
+        position: "absolute",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+        opacity: 0.045,
+        pointerEvents: "none",
+      }}
+    >
+      <defs>
+        <pattern
+          id="hero-geo"
+          x="0"
+          y="0"
+          width="60"
+          height="60"
+          patternUnits="userSpaceOnUse"
+        >
+          <path
+            d="M30 5 L55 30 L30 55 L5 30 Z"
+            stroke="#1C5955"
+            strokeWidth="0.5"
+            fill="none"
+          />
+          <circle cx="30" cy="30" r="4" stroke="#BE5B34" strokeWidth="0.4" fill="none" />
+          <line x1="30" y1="0" x2="30" y2="60" stroke="#1C5955" strokeWidth="0.2" />
+          <line x1="0" y1="30" x2="60" y2="30" stroke="#1C5955" strokeWidth="0.2" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hero-geo)" />
+    </svg>
+  );
+}
 
 export default function Hero() {
   return (
@@ -26,21 +54,23 @@ export default function Hero() {
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        padding: "7.5rem 1.25rem 4.5rem",
+        padding: "7.5rem 1.25rem 4rem",
         overflow: "hidden",
         backgroundColor: "#F5EEE0",
       }}
     >
-      {/* Warm ambient gradients */}
+      <SubtlePattern />
+
+      {/* Warm ambient gradients layered on top of pattern */}
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
           inset: 0,
           background: `
-            radial-gradient(ellipse 80% 60% at 50% 105%, rgba(190,91,52,0.12), transparent 55%),
-            radial-gradient(circle at 15% 25%, rgba(28,89,85,0.07), transparent 40%),
-            radial-gradient(circle at 85% 20%, rgba(190,91,52,0.07), transparent 35%)
+            radial-gradient(ellipse 80% 55% at 50% 105%, rgba(245,238,224,0.92), transparent 55%),
+            radial-gradient(circle at 15% 25%, rgba(28,89,85,0.06), transparent 40%),
+            radial-gradient(circle at 85% 20%, rgba(190,91,52,0.06), transparent 35%)
           `,
           pointerEvents: "none",
         }}
@@ -61,7 +91,7 @@ export default function Hero() {
         }}
       />
 
-      <div style={{ position: "relative", maxWidth: "1080px", width: "100%" }}>
+      <div style={{ position: "relative", maxWidth: "860px", width: "100%" }}>
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -72,12 +102,12 @@ export default function Hero() {
             alignItems: "center",
             justifyContent: "center",
             gap: "12px",
-            marginBottom: "1.5rem",
+            marginBottom: "1.75rem",
           }}
         >
           <div
             style={{
-              width: "32px",
+              width: "28px",
               height: "1px",
               backgroundColor: "#BE5B34",
               opacity: 0.5,
@@ -86,18 +116,18 @@ export default function Hero() {
           <span
             style={{
               fontFamily: "var(--font-dm-sans)",
-              fontSize: "0.68rem",
+              fontSize: "0.66rem",
               fontWeight: 500,
               letterSpacing: "0.22em",
               textTransform: "uppercase",
               color: "#BE5B34",
             }}
           >
-            Uzbek, Uyghur &amp; Pakistani Catering &middot; Dallas
+            Uzbek, Uyghur &amp; Pakistani Catering
           </span>
           <div
             style={{
-              width: "32px",
+              width: "28px",
               height: "1px",
               backgroundColor: "#BE5B34",
               opacity: 0.5,
@@ -112,13 +142,12 @@ export default function Hero() {
           transition={{ duration: 0.72, delay: 0.26, ease }}
           style={{
             fontFamily: "var(--font-playfair)",
-            fontSize: "clamp(2.8rem, 6.5vw, 5.4rem)",
+            fontSize: "clamp(2.6rem, 6.2vw, 5rem)",
             fontWeight: 500,
-            lineHeight: 1.04,
+            lineHeight: 1.06,
             letterSpacing: "-0.02em",
             color: "#1A2826",
-            margin: "0 auto 1.75rem",
-            maxWidth: "920px",
+            margin: "0 auto 1.5rem",
           }}
         >
           Real food, made by hand,
@@ -136,63 +165,29 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.36, ease }}
           style={{
             fontFamily: "var(--font-dm-sans)",
-            fontSize: "1.12rem",
+            fontSize: "1.06rem",
             fontWeight: 300,
             lineHeight: 1.82,
             color: "#3D5250",
-            maxWidth: "600px",
-            margin: "0 auto 2.25rem",
+            maxWidth: "520px",
+            margin: "0 auto 2.5rem",
           }}
         >
           Anna Khanum personally prepares every order &mdash; fresh plov,
           tender manty, aromatic biryani, and more. Family recipes, no
-          shortcuts, made specifically for your event.
+          shortcuts, made for your gathering.
         </motion.p>
-
-        {/* Occasion tags */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.44, ease }}
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "0.5rem",
-            marginBottom: "2.5rem",
-          }}
-        >
-          {occasions.map((item) => (
-            <span
-              key={item}
-              style={{
-                display: "inline-block",
-                padding: "0.45rem 0.85rem",
-                fontFamily: "var(--font-dm-sans)",
-                fontSize: "0.78rem",
-                fontWeight: 400,
-                color: "#3D5250",
-                border: "1px solid rgba(208,196,173,0.85)",
-                backgroundColor: "rgba(255,255,255,0.45)",
-                letterSpacing: "0.01em",
-              }}
-            >
-              {item}
-            </span>
-          ))}
-        </motion.div>
 
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.52, ease }}
+          transition={{ duration: 0.5, delay: 0.46, ease }}
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "1rem",
-            marginBottom: "3rem",
+            gap: "0.85rem",
           }}
         >
           <div
@@ -287,65 +282,14 @@ export default function Hero() {
           <p
             style={{
               fontFamily: "var(--font-dm-sans)",
-              fontSize: "0.76rem",
+              fontSize: "0.74rem",
               fontWeight: 300,
               color: "#6A7B78",
               margin: 0,
             }}
           >
-            Serving Dallas &ndash; Fort Worth &middot; Every dish made fresh for
-            your date
+            Serving Dallas &ndash; Fort Worth &middot; Every dish made fresh
           </p>
-        </motion.div>
-
-        {/* Bottom trust strip */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.65 }}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "3rem",
-            flexWrap: "wrap",
-            borderTop: "1px solid rgba(208,196,173,0.7)",
-            paddingTop: "1.75rem",
-          }}
-        >
-          {[
-            { label: "Family recipes", detail: "passed down, not invented" },
-            { label: "Made to order", detail: "nothing pre-cooked" },
-            { label: "Personal service", detail: "you talk to Anna directly" },
-          ].map((item) => (
-            <div
-              key={item.label}
-              style={{ textAlign: "center", minWidth: "140px" }}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--font-dm-sans)",
-                  fontSize: "0.82rem",
-                  fontWeight: 500,
-                  color: "#1C5955",
-                  margin: "0 0 0.2rem",
-                }}
-              >
-                {item.label}
-              </p>
-              <p
-                style={{
-                  fontFamily: "var(--font-dm-sans)",
-                  fontSize: "0.74rem",
-                  fontWeight: 300,
-                  color: "#6A7B78",
-                  margin: 0,
-                }}
-              >
-                {item.detail}
-              </p>
-            </div>
-          ))}
         </motion.div>
       </div>
 
