@@ -5,43 +5,22 @@ import { motion } from "framer-motion";
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 const PHONE_HREF = "tel:+1XXXXXXXXXX";
 
-function SubtlePattern() {
-  return (
-    <svg
-      aria-hidden="true"
-      style={{
-        position: "absolute",
-        inset: 0,
-        width: "100%",
-        height: "100%",
-        opacity: 0.045,
-        pointerEvents: "none",
-      }}
-    >
-      <defs>
-        <pattern
-          id="hero-geo"
-          x="0"
-          y="0"
-          width="60"
-          height="60"
-          patternUnits="userSpaceOnUse"
-        >
-          <path
-            d="M30 5 L55 30 L30 55 L5 30 Z"
-            stroke="#1C5955"
-            strokeWidth="0.5"
-            fill="none"
-          />
-          <circle cx="30" cy="30" r="4" stroke="#BE5B34" strokeWidth="0.4" fill="none" />
-          <line x1="30" y1="0" x2="30" y2="60" stroke="#1C5955" strokeWidth="0.2" />
-          <line x1="0" y1="30" x2="60" y2="30" stroke="#1C5955" strokeWidth="0.2" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#hero-geo)" />
-    </svg>
-  );
-}
+const PATTERN_SVG = `data:image/svg+xml,${encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80">
+    <path d="M40 4 L76 40 L40 76 L4 40 Z" stroke="#1C5955" stroke-width="0.8" fill="none"/>
+    <rect x="22" y="22" width="36" height="36" stroke="#1C5955" stroke-width="0.55" fill="none"/>
+    <circle cx="40" cy="40" r="10" stroke="#8B5E3C" stroke-width="0.7" fill="none"/>
+    <circle cx="40" cy="40" r="3.5" stroke="#8B5E3C" stroke-width="0.55" fill="none"/>
+    <circle cx="0" cy="0" r="2" fill="#1C5955"/>
+    <circle cx="80" cy="0" r="2" fill="#1C5955"/>
+    <circle cx="0" cy="80" r="2" fill="#1C5955"/>
+    <circle cx="80" cy="80" r="2" fill="#1C5955"/>
+    <line x1="40" y1="4" x2="40" y2="18" stroke="#1C5955" stroke-width="0.4"/>
+    <line x1="40" y1="62" x2="40" y2="76" stroke="#1C5955" stroke-width="0.4"/>
+    <line x1="4" y1="40" x2="18" y2="40" stroke="#1C5955" stroke-width="0.4"/>
+    <line x1="62" y1="40" x2="76" y2="40" stroke="#1C5955" stroke-width="0.4"/>
+  </svg>`
+)}`;
 
 export default function Hero() {
   return (
@@ -59,19 +38,44 @@ export default function Hero() {
         backgroundColor: "#F5EEE0",
       }}
     >
-      <SubtlePattern />
-
-      {/* Warm ambient gradients layered on top of pattern */}
+      {/* Warm ambient gradients — below the pattern */}
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
           inset: 0,
           background: `
-            radial-gradient(ellipse 80% 55% at 50% 105%, rgba(245,238,224,0.92), transparent 55%),
             radial-gradient(circle at 15% 25%, rgba(28,89,85,0.06), transparent 40%),
             radial-gradient(circle at 85% 20%, rgba(190,91,52,0.06), transparent 35%)
           `,
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* Geometric pattern */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `url("${PATTERN_SVG}")`,
+          backgroundRepeat: "repeat",
+          backgroundSize: "80px 80px",
+          opacity: 0.12,
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* Soft fade at bottom so pattern doesn't end abruptly */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "30%",
+          background: "linear-gradient(to top, #F5EEE0, transparent)",
           pointerEvents: "none",
         }}
       />
