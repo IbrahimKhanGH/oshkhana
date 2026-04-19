@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const PHONE_HREF = "tel:+1XXXXXXXXXX";
+import { PHONE_HREF } from "../data/contact";
 
 export default function StickyMobileCTA() {
   const [visible, setVisible] = useState(false);

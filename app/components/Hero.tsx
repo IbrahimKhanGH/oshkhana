@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { PHONE_HREF } from "../data/contact";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
-const PHONE_HREF = "tel:+1XXXXXXXXXX";
 
 const PATTERN_SVG = `data:image/svg+xml,${encodeURIComponent(
   `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80">

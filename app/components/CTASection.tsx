@@ -1,9 +1,7 @@
 "use client";
 
 import FadeUp from "./FadeUp";
-
-const PHONE = "(XXX) XXX-XXXX";
-const PHONE_HREF = "tel:+1XXXXXXXXXX";
+import { PHONE_DISPLAY as PHONE, PHONE_HREF, EMAIL, EMAIL_HREF } from "../data/contact";
 
 function CTAOrnament() {
   return (
@@ -180,7 +178,7 @@ export default function CTASection() {
 
             {/* Secondary: email */}
             <a
-              href="mailto:hello@oshkhana.com"
+              href={EMAIL_HREF}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -203,7 +201,7 @@ export default function CTASection() {
                 e.currentTarget.style.color = "#A8C8C5";
               }}
             >
-              Or send a message: hello@oshkhana.com
+              Or send a message: {EMAIL}
             </a>
           </div>
         </FadeUp>

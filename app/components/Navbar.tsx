@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { PHONE_HREF } from "../data/contact";
 
 const navLinks = [
   { label: "Menu", href: "#menu" },
@@ -147,7 +148,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             {/* Phone CTA — primary */}
             <a
-              href="tel:+1XXXXXXXXXX"
+              href={PHONE_HREF}
               className="hidden md:inline-flex items-center gap-2"
               style={{
                 fontFamily: "var(--font-dm-sans)",
@@ -268,7 +269,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="tel:+1XXXXXXXXXX"
+              href={PHONE_HREF}
               onClick={() => setMenuOpen(false)}
               style={{
                 fontFamily: "var(--font-dm-sans)",

@@ -1,6 +1,7 @@
 "use client";
 
 import FadeUp from "./FadeUp";
+import { PHONE_HREF, EMAIL_HREF } from "../data/contact";
 
 const eventTypes = [
   {
@@ -300,7 +301,7 @@ export default function Catering() {
                   }}
                 >
                   <a
-                    href="tel:+1XXXXXXXXXX"
+                    href={PHONE_HREF}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -323,7 +324,7 @@ export default function Catering() {
                     Call or Text
                   </a>
                   <a
-                    href="mailto:hello@oshkhana.com"
+                    href={EMAIL_HREF}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
