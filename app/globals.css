@@ -36,8 +36,13 @@
 }
 
 html {
-  /* Lenis owns scroll — don't set scroll-behavior here */
+  scroll-behavior: smooth;
   text-size-adjust: 100%;
+}
+
+/* Offset anchor links so the fixed navbar doesn't cover section headings */
+section[id] {
+  scroll-margin-top: 100px;
 }
 
 body {
@@ -89,15 +94,3 @@ a {
   text-decoration: none;
 }
 
-/* ─── Lenis scroll fix ──────────────────────────────────────────────────────── */
-html.lenis, html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
