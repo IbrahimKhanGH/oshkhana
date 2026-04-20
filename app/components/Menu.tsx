@@ -11,10 +11,10 @@ const PRICE_COLS = "70px 52px 52px";
 // Photos that have a matching dish on the menu, in display order.
 // The grid celebrates the food visually — labels aren't needed.
 const GALLERY = [
-  { src: "/images/menu/afghani-pulao.png", alt: "Afghani Pulao — rice with carrots in a large silver kazan" },
-  { src: "/images/menu/biryani.png",       alt: "Biryani — saffron rice with tomatoes and herbs in a dark pan" },
-  { src: "/images/menu/qorma.png",         alt: "Qorma — slow-braised meat in a dark cast-iron wok" },
-  { src: "/images/menu/nihari.png",        alt: "Beef Nihari — slow-simmered stew ready for a catering tray" },
+  { src: "/images/menu/afghani-pulao.jpg", alt: "Afghani Pulao — rice with carrots in a large silver kazan" },
+  { src: "/images/menu/biryani.jpg",       alt: "Biryani — saffron rice with tomatoes and herbs in a dark pan" },
+  { src: "/images/menu/qorma.jpg",         alt: "Qorma — slow-braised meat in a dark cast-iron wok" },
+  { src: "/images/menu/nihari.jpg",        alt: "Beef Nihari — slow-simmered stew ready for a catering tray" },
 ];
 
 export default function Menu() {

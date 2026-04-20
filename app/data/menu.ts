@@ -36,7 +36,7 @@ export const menu: MenuCategory[] = [
     dishes: [
       {
         name: "Afghani Pulao",
-        image: "/images/menu/afghani-pulao.png",
+        image: "/images/menu/afghani-pulao.jpg",
         description:
           "Fragrant long-grain rice slow-cooked in a rich meat broth with caramelized onions, raisins, and whole spices. Served alongside a tender slow-cooked korma.",
         variants: [
@@ -57,7 +57,7 @@ export const menu: MenuCategory[] = [
       },
       {
         name: "Biryani",
-        image: "/images/menu/biryani.png",
+        image: "/images/menu/biryani.jpg",
         description:
           "Long-grain rice layered with slow-cooked meat and whole spices, sealed and finished dum-style. Fragrant, full-flavored — the one everyone asks for by name.",
         variants: [
@@ -82,7 +82,7 @@ export const menu: MenuCategory[] = [
       },
       {
         name: "Qorma",
-        image: "/images/menu/qorma.png",
+        image: "/images/menu/qorma.jpg",
         description:
           "Slow-braised meat in a rich, aromatic gravy of yogurt, caramelized onions, and whole spices. A classic of South Asian hospitality — steady, warming, unforgettable.",
         variants: [
@@ -92,7 +92,7 @@ export const menu: MenuCategory[] = [
       },
       {
         name: "Beef Nihari",
-        image: "/images/menu/nihari.png",
+        image: "/images/menu/nihari.jpg",
         description:
           "A slow-simmered stew of tender beef shank in a deeply spiced, velvety broth. Finished with fresh ginger, coriander, and lime — the kind of dish that takes all day and shows it.",
         variants: [
